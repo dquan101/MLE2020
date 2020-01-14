@@ -12,8 +12,11 @@ def loops(tri):
     for num in range(len(tri)):
         pos[0] += int(tri[num][pos[1]])
         try:
-            if int(tri[num + 1][pos[1]]) > int(tri[num + 1][pos[1] + 1]):
+            if int(tri[num + 1][pos[1]]) < int(tri[num + 1][pos[1] + 1]):
                 pos[1] += 1
         except IndexError:
             pass
     return print(pos[0])
+
+
+loops(read("triangle.txt"))
